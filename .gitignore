@@ -14,7 +14,12 @@
 .phpunit.result.cache
 ###< phpunit/phpunit ###
 
-###> symfony/phpunit-bridge ###
-.phpunit.result.cache
-/phpunit.xml
-###< symfony/phpunit-bridge ###
+### PhpStorm ###
+# User-specific stuff
+.idea/
+# CMake
+cmake-build-*/
+# File-based project format
+*.iws
+# IntelliJ
+out/
