@@ -1,0 +1,41 @@
+// Variables
+// ==================
+:root {
+  --white: #FFFFFF;
+  --blue: #1C3988;
+  --dark-blue: #091638;
+  --light-blue: #F3F3FA;
+  --primary: var(--blue);
+  --hover: #6E8AE9;
+  --color: var(--dark-blue);
+  --background: var(--white);
+  --header-height: 48px;
+}
+
+// Outils
+// ==================
+@import 'tools/typography';
+
+// Generic
+// ==================
+body {
+  font-family: $font;
+  font-size: 16px;
+  color: var(--color);
+  line-height: 1.6;
+  background: var(--background);
+}
+
+::selection {
+  background: var(--color);
+  color: #fff;
+}
+
+// Modules
+// ==================
+@import 'modules/header';
+@import 'modules/footer';
+
+// Pages
+// ==================
+@import 'pages/home';

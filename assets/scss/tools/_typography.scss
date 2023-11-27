@@ -1,0 +1,79 @@
+// Variables
+// ==================
+$font: 'Open Sans', sans-serif;
+$font-alt: 'Merriweather', sans-serif;
+$font-dir: '/assets/fonts/';
+
+// Font face
+// ==================
+@font-face {
+    font-family: 'Open Sans';
+    src: url($font-dir + 'OpenSans/OpenSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url($font-dir + 'OpenSans/OpenSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url($font-dir + 'OpenSans/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Merriweather';
+    src: url($font-dir + 'Merriweather/Merriweather-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url($font-dir + 'Merriweather/Merriweather-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+// Pour générer les polices : https://transfonter.org/
+
+// Utils for typo
+// ==================
+.text-left {
+  text-align: left !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.title {
+  font-family: $font-alt;
+}
+.normal {
+  font-weight: normal;
+}
+.bold {
+  font-weight: bold;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.underline {
+  text-decoration: underline;
+}
+a.underline:hover {
+  text-decoration: none;
+}
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
