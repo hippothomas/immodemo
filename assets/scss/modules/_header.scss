@@ -1,0 +1,34 @@
+.header {
+  width: 80vw;
+  max-width: 1100px;
+  margin: 30px auto;
+
+  .nav {
+    display: flex;
+    align-items: center;
+
+    .header_logo {
+      margin-right: 65px;
+      img { display: block; }
+    }
+
+    .header_links a {
+      color: var(--dark-blue);
+      text-decoration: none;
+      margin-right: 35px;
+    }
+
+    .header_contact {
+      margin-left: auto;
+      a {
+        color: var(--white);
+        background: var(--blue);
+        padding: 9px 22px;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 3px;
+      }
+    }
+  }
+}

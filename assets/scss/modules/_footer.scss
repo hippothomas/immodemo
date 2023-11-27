@@ -1,0 +1,22 @@
+footer {
+  background: var(--blue);
+  color: var(--white);
+  text-align: center;
+  padding: 55px 0;
+
+  .footer_logo {
+    img {
+      width: 47px;
+      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(31deg) brightness(111%) contrast(101%);
+    }
+    .title {
+      font-size: 18px;
+    }
+  }
+
+  .footer_real a {
+    color: var(--white);
+    font-weight: bold;
+    text-decoration: none;
+  }
+}

@@ -7,40 +7,40 @@ $font-dir: '/assets/fonts/';
 // Font face
 // ==================
 @font-face {
-    font-family: 'Open Sans';
-    src: url($font-dir + 'OpenSans/OpenSans-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Open Sans';
+  src: url($font-dir + 'OpenSans/OpenSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-    font-family: 'Open Sans';
-    src: url($font-dir + 'OpenSans/OpenSans-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Open Sans';
+  src: url($font-dir + 'OpenSans/OpenSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-    font-family: 'Open Sans';
-    src: url($font-dir + 'OpenSans/OpenSans-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Open Sans';
+  src: url($font-dir + 'OpenSans/OpenSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-    font-family: 'Merriweather';
-    src: url($font-dir + 'Merriweather/Merriweather-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Merriweather';
+  src: url($font-dir + 'Merriweather/Merriweather-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Merriweather';
-    src: url($font-dir + 'Merriweather/Merriweather-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Merriweather';
+  src: url($font-dir + 'Merriweather/Merriweather-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 // Pour générer les polices : https://transfonter.org/
 
