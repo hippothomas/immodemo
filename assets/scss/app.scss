@@ -26,10 +26,12 @@ body {
   background: var(--background);
   margin: 0;
 }
-
 ::selection {
   background: var(--color);
   color: #fff;
+}
+.wrapper {
+  min-height: calc(100vh - 300px);
 }
 
 // Modules

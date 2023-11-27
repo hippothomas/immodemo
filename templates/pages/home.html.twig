@@ -3,11 +3,32 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-<style>
-    .wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-</style>
-
-<div class="wrapper">
-    <h1>Page d'accueil!</h1>
+<div class="wrapper" id="homepage">
+    <div class="section homesearch">
+        <div class="wrapper_block">
+            <div class="text_section">
+                <div class="title">Votre Succès, Notre Expertise</div>
+                <div class="desc">Votre partenaire immobilier d'exception à Nantes depuis plus de 15 ans. Vente ou achat : nous faisons de votre projet une réussite totale.</div>
+            </div>
+            <div class="picture_section">
+                <img src="/images/pages/home/home_head_front.png" alt="Immeuble" id="building-front" />
+                <img src="/images/pages/home/home_head_bg.png" alt="Arrière plan de l'immeuble" id="building-back" />
+                <img src="/images/pages/home/dots_bg.png" alt="Image de fond" id="dot-background" />
+            </div>
+        </div>
+        <div class="searchbar_widget">
+            <form>
+                <select name="type" id="type">
+                    <option value="">Type de bien</option>
+                </select>
+                <span class="location">
+                    <input type="text" name="location" id="location" placeholder="Ville ou code postal" />
+                </span>
+                <span class="submit">
+                    <input type="submit" value="Rechercher" />
+                </span>
+            </form>
+        </div>
+    </div>
 </div>
 {% endblock %}
