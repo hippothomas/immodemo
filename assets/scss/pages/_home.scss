@@ -166,6 +166,17 @@
       .wrapper_controls {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        .slidebar_section {
+          background: #DADAEE;
+          height: 1.75px;
+          width: calc(100% - 150px);
+          .slider {
+            background: var(--blue);
+            height: 1.75px;
+            width: calc(150px);
+          }
+        }
         .arrows_section {
           width: 127px;
           display: flex;
