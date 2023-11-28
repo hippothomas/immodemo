@@ -263,4 +263,51 @@
       }
     }
   }
+
+  .section.about-us {
+    width: 80vw;
+    max-width: 930px;
+    margin: 100px auto;
+    position: relative;
+
+    .wrapper_block {
+      display: flex;
+      justify-content: space-between;
+      .picture_section {
+        width: 61%;
+        position: relative;
+        img {
+          position: absolute;
+          border-radius: 3px;
+        }
+        #dot-background-au {
+          z-index: 10;
+          top: 0;
+          left: 0;
+          height: 283px;
+        }
+        #team-working {
+          z-index: 20;
+          top: 41px;
+          left: 43px;
+          width: calc(100% - 43px);
+          height: calc(100% - 41px);
+          max-height: 405px;
+          object-fit: cover;
+        }
+      }
+      .text_section {
+        width: 31%;
+        .title {
+          font-size: 45px;
+          font-weight: bold;
+          line-height: 60px;
+          margin-bottom: 10px;
+        }
+        .desc {
+          font-size: 14px;
+        }
+      }
+    }
+  }
 }
