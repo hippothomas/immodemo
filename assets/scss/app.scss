@@ -12,6 +12,10 @@
   --header-height: 48px;
 }
 
+// Libs
+// ==================
+@import '/node_modules/tiny-slider/src/tiny-slider.scss';
+
 // Outils
 // ==================
 @import 'tools/typography';

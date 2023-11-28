@@ -122,4 +122,134 @@
       }
     }
   }
+
+  .section.topoffers {
+    background: var(--light-blue);
+    padding: 1px;
+
+    .wrapper {
+      width: 80vw;
+      max-width: 930px;
+      margin: 95px auto;
+
+      .wrapper_block {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        margin-bottom: 10px;
+
+        .text_section {
+          .title {
+            font-size: 45px;
+            font-weight: bold;
+            line-height: 60px;
+            margin-bottom: 10px;
+          }
+          .desc {
+            width: 460px;
+          }
+        }
+        .btn_section {
+          padding-bottom: 10px;
+          a {
+            border: 2px solid var(--blue);
+            border-radius: 3px;
+            font-size: 13px;
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 14px;
+          }
+        }
+      }
+
+      .wrapper_controls {
+        display: flex;
+        justify-content: space-between;
+        .arrows_section {
+          width: 127px;
+          display: flex;
+          justify-content: space-between;
+          .arrow-left, .arrow-right {
+            background: var(--blue);
+            width: 55px;
+            height: 55px;
+            border-radius: 55px;
+            cursor: pointer;
+            position: relative;
+          }
+          .arrow-left:after {
+            content: "";
+            width: 11px;
+            height: 20px;
+            background: url(/assets/images/icon/arrow-left.png) 0 0 no-repeat;
+            top: 18px;
+            left: 21px;
+            position: absolute;
+            background-size: contain;
+          }
+          .arrow-right:after {
+            content: "";
+            width: 11px;
+            height: 20px;
+            background: url(/assets/images/icon/arrow-right.png) 0 0 no-repeat;
+            top: 18px;
+            right: 21px;
+            position: absolute;
+            background-size: contain;
+          }
+        }
+      }
+
+      .wrapper_offers {
+        display: flex;
+        margin-top: 20px;
+        .property-card {
+          width: calc(33% - 10px);
+
+          .container {
+            background: var(--white);
+            border-radius: 3px;
+            box-shadow: 0 4px 20px 0 rgba(71,100,195,0.1);
+
+            .photo {
+              position: relative;
+              padding-bottom: 71.43%; /* 350:250 ratio */
+              height: 0;
+              overflow: hidden;
+              img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+              }
+            }
+
+            .desc {
+              padding: 19px 17px 13px;
+              .title {
+                margin-bottom: 15px;
+                a {
+                  color: var(--color);
+                  text-decoration: none;
+                  font-weight: bold;
+                  font-size: 18px;
+                }
+              }
+              .price {
+                font-size: 14px;
+                color: var(--blue);
+                font-weight: bold;
+              }
+              .city { font-size: 14px; }
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -7,3 +7,16 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './scss/app.scss';
+
+// Slider on homepage
+// ==================
+import { tns } from "tiny-slider"
+let slider = tns({
+    container: '.wrapper_offers',
+    items: 3,
+    gutter: 20,
+    controlsContainer: '.arrows_section',
+    prevButton: '.arrow-left',
+    nextButton: '.arrow-right',
+    nav: false
+});
