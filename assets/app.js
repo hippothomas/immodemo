@@ -51,5 +51,16 @@ let ref_slider = tns({
     gutter: 20,
     mouseDrag: true,
     controls: false,
-    navContainer: '.references_slider_dots'
+    navContainer: '.references_slider_dots',
+    autoplay: true,
+    autoplayButtonOutput: false,
+    slideBy: 2,
+    speed: 1500,
+    autoplayTimeout: 10000
+});
+
+// Click on newsletter button
+// ==================
+document.getElementById('newsletter-btn').addEventListener('click', () => {
+    alert("Merci de l'intérêt que vous portez à ce site mais c'est un site de démo, tout est donc fictif. Si le site vous plaît, n'hésitez pas à consulter mon site hippolyte-thomas.fr pour plus d'informations.");
 });

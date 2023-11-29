@@ -428,4 +428,63 @@
     }
   }
 
+  .section.newsletter {
+    background: var(--light-blue);
+    .wrapper_block {
+      width: 80vw;
+      max-width: 930px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      .picto_section {
+        width: 30%;
+        height: 300px;
+        position: relative;
+      }
+      .picto_section:after {
+        content: "";
+        width: 175px;
+        height: 175px;
+        background: url(/assets/images/icon/newsletter.png) 0 0 no-repeat;
+        top: 63px;
+        left: 63px;
+        position: absolute;
+        background-size: contain;
+      }
+      .text_section {
+        margin-left: 30px;
+        .title {
+          font-size: 30px;
+          font-weight: bold;
+          line-height: 30px;
+          margin-bottom: 10px;
+        }
+        .form {
+          margin-top: 15px;
+          input[type="email"] {
+            background: var(--white);
+            border: 1px solid #DDD;
+            border-radius: 3px;
+            padding: 8px 14px;
+            width: 195px;
+            font-size: 12px;
+            box-shadow: inset 0px 1px 5px 0px rgba(0,0,0,0.1);
+          }
+          input[type="submit"] {
+            color: var(--blue);
+            font-weight: bold;
+            background: none;
+            border: 2px solid var(--blue);
+            border-radius: 3px;
+            padding: 7px 10px;
+            height: 32px;
+            font-size: 12px;
+            margin-left: 9px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
 }
