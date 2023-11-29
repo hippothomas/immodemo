@@ -355,4 +355,77 @@
       }
     }
   }
+
+
+  .section.references {
+    width: 80vw;
+    max-width: 930px;
+    margin: 0 auto 100px;
+    position: relative;
+    .text_section {
+      margin-bottom: 35px;
+      .title {
+        font-size: 45px;
+        font-weight: bold;
+        line-height: 60px;
+        margin-bottom: 10px;
+      }
+      .desc {
+        max-width: 60%;
+      }
+    }
+
+    .references_slider {
+      display: flex;
+      .card {
+        width: calc(50% - 20px);
+          .container {
+            background: var(--light-blue);
+            border-radius: 3px;
+            padding: 20px;
+            cursor: pointer;
+
+            .quote {
+              position: relative;
+              font-size: 13.5px;
+              padding: 10px 0 20px 40px;
+            }
+            .quote:after {
+              content: "";
+              width: 23px;
+              height: 24px;
+              background: url(/assets/images/icon/quote.png) 0 0 no-repeat;
+              top: 4px;
+              left: 8px;
+              position: absolute;
+              background-size: contain;
+            }
+            .name {
+              font-family: $font-alt;
+              font-weight: bold;
+            }
+            .home_title {
+              font-size: 13.5px;
+            }
+          }
+      }
+    }
+    .references_slider_dots {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      .dot {
+        width: 15px;
+        height: 15px;
+        background: #DADAEE;
+        border-radius: 15px;
+        cursor: pointer;
+      }
+      .dot.tns-nav-active {
+        background: var(--blue);
+      }
+    }
+  }
+
 }

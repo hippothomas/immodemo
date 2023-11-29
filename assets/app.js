@@ -41,3 +41,15 @@ let slider = tns({
 slider.events.on('indexChanged', (i) => {
     sliderBarWidth(i.displayIndex, i.slideCount);
 });
+
+// References slider on homepage
+// ==================
+// Slider instantiation
+let ref_slider = tns({
+    container: '.references_slider',
+    items: 2,
+    gutter: 20,
+    mouseDrag: true,
+    controls: false,
+    navContainer: '.references_slider_dots'
+});
