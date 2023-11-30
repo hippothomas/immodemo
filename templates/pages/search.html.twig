@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche{% endblock %}
+
+{% block body %}
+<div class="wrapper" id="searchpage">
+    <div class="section headings">
+        <div class="wrapper_block">
+            <h1 class="title">Explorez nos annonces immobilières</h1>
+            <h2 class="desc">Trouvez la perle rare parmi nos propriétés exceptionnelles</h2>
+        </div>
+    </div>
+
+    <div class="section search">
+        <div class="wrapper_block">
+            <div class="searchbar">
+                <input type="text" name="keyword" id="input_keyword" placeholder="Entrez un mot-clé" />
+                <span class="search-animation">
+                    <input type="submit" value="Rechercher" />
+                </span>
+            </div>
+            <div class="separation">
+                <div class="text">Plus de critères</div>
+            </div>
+            <div class="filters">
+                <select name="type" id="type">
+                    <option value="">Type de bien</option>
+                </select>
+                <span class="location">
+                    <input type="text" name="location" id="location" placeholder="Ville ou code postal" />
+                </span>
+                <span class="price">
+                    <input type="text" name="max_price" id="max_price" placeholder="Prix maximum" />
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section listing">
+        <div class="wrapper_block">
+            <div class="results">
+                {% for i in 1..12 %}
+                <div class="property-card" data-id="P0{{ i }}">
+                    <div class="container">
+                        <div class="photo">
+                            <a href="#">
+                                <img src="https://picsum.photos/id/48/300/300" alt="titre" />
+                            </a>
+                        </div>
+                        <div class="desc">
+                            <div class="title">
+                                <a href="#">Grand 4 pièces avec une belle terrasse</a>
+                            </div>
+                            <div class="price">320 000€</div>
+                            <div class="city">Nantes</div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="load_more">
+                <button id="load-more">Page suivante</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="section newsletter">
+        <div class="wrapper_block">
+            <div class="picto_section"></div>
+            <div class="text_section">
+                <div class="title">Abonnez-vous à notre newsletter</div>
+                <div class="desc">Recevez les dernières nouvelles et offres intéressantes</div>
+                <div class="form">
+                    <input type="email" placeholder="Votre adresse e-mail" />
+                    <input type="submit" value="S'abonner" id="newsletter-btn" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,12 +1,12 @@
-{% set anchor_base = (app.request.get('_route') == 'home') ? '' : '/' %}
+{% set anchor_base = (app.request.get('_route') == 'home') ? '' : path('home') %}
 <nav class="header" id="header">
     <div class="nav">
         <div class="header_logo">
             <img src="/images/logo.svg" alt="ImmoDemo Logo" />
         </div>
         <div class="header_links">
-            <a href="/">Accueil</a>
-            <a href="#">Recherche</a>
+            <a href="{{ path('home') }}">Accueil</a>
+            <a href="{{ path('search') }}">Recherche</a>
             <a href="{{anchor_base}}#a-propos">À Propos</a>
             <a href="{{anchor_base}}#notre-equipe">Notre équipe</a>
         </div>

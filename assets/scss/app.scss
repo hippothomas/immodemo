@@ -19,6 +19,7 @@
 // Outils
 // ==================
 @import 'tools/typography';
+@import 'tools/animations';
 
 // Generic
 // ==================
@@ -42,7 +43,10 @@ body {
 // ==================
 @import 'modules/header';
 @import 'modules/footer';
+@import 'modules/cards';
+@import 'modules/newsletter';
 
 // Pages
 // ==================
 @import 'pages/home';
+@import 'pages/search';
