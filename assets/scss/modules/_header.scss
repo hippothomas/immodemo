@@ -17,6 +17,10 @@
       text-decoration: none;
       margin-right: 35px;
       font-size: 14px;
+      transition: color 0.15s ease-out;
+    }
+    .header_links a:hover {
+      color: var(--hover);
     }
 
     .header_contact {
@@ -28,7 +32,13 @@
         font-size: 14px;
         font-weight: bold;
         text-decoration: none;
+        border: 2px solid var(--blue);
         border-radius: 3px;
+        transition: 0.25s cubic-bezier(.39,.58,.57,1);
+      }
+      a:hover {
+        background: none;
+        color: var(--blue);
       }
     }
   }
