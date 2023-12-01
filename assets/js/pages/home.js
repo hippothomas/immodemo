@@ -20,7 +20,6 @@ if (document.getElementById('homepage') !== null) {
         container: '.wrapper_offers',
         items: 3,
         gutter: 20,
-        controlsContainer: '.arrows_section',
         prevButton: '.arrow-left',
         nextButton: '.arrow-right',
         nav: false,
@@ -35,7 +34,7 @@ if (document.getElementById('homepage') !== null) {
 
     // References slider on homepage
     // ==================
-    let ref_slider = tns({
+    tns({
         container: '.references_slider',
         items: 2,
         gutter: 20,

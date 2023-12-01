@@ -5,6 +5,7 @@ import './scss/app.scss';
 // Pages
 // ==================
 import './js/pages/home.js';
+import './js/pages/property.js';
 
 // Click on newsletter button
 // ==================
