@@ -102,6 +102,45 @@
             }
           }
         }
+
+        .details_block {
+          width: calc(100% - 125px);
+          margin: 40px auto;
+
+          .icon_group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            > div {
+              position: relative;
+              font-family: $font-alt;
+              font-weight: bold;
+            }
+            .type:after, .dimensions:after, .location:after {
+              content: "";
+              position: absolute;
+              top: calc(-50% + 7.5px);
+              left: 0;
+              width: 35px;
+              height: 35px;
+            }
+            .type { padding-left: 45px; }
+            .type:after {
+              background: url(/assets/images/icon/property_type.png) 0 0 no-repeat;
+              background-size: contain;
+            }
+            .dimensions { padding-left: 40px; }
+            .dimensions:after {
+              background: url(/assets/images/icon/property_surface.png) 0 0 no-repeat;
+              background-size: contain;
+            }
+            .location { padding-left: 37px; }
+            .location:after {
+              background: url(/assets/images/icon/property_location.png) 0 0 no-repeat;
+              background-size: contain;
+            }
+          }
+        }
       }
 
       .contact-details {
