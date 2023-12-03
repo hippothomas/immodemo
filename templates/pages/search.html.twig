@@ -43,13 +43,15 @@
                 <div class="property-card" data-id="P0{{ i }}">
                     <div class="container">
                         <div class="photo">
-                            <a href="#">
-                                <img src="https://picsum.photos/id/48/300/300" alt="titre" />
+                            <a href="{{ path('property', {'slug': 'property-slug-ref12345'}) }}">
+                                <img src="https://picsum.photos/id/48/300/300" alt="Grand 4 pièces avec une belle terrasse" />
                             </a>
                         </div>
                         <div class="desc">
                             <div class="title">
-                                <a href="#">Grand 4 pièces avec une belle terrasse</a>
+                                <a href="{{ path('property', {'slug': 'property-slug-ref12345'}) }}">
+                                    Grand 4 pièces avec une belle terrasse
+                                </a>
                             </div>
                             <div class="price">320 000€</div>
                             <div class="city">Nantes</div>

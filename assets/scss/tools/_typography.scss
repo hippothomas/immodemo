@@ -46,34 +46,10 @@ $font-dir: '/assets/fonts/';
 
 // Utils for typo
 // ==================
-.text-left {
-  text-align: left !important;
-}
-.text-right {
-  text-align: right !important;
-}
-.text-center {
-  text-align: center !important;
-}
 .title {
   font-family: $font-alt;
-}
-.normal {
-  font-weight: normal;
-}
-.bold {
+  font-size: 45px;
   font-weight: bold;
-}
-.uppercase {
-  text-transform: uppercase;
-}
-.underline {
-  text-decoration: underline;
-}
-a.underline:hover {
-  text-decoration: none;
-}
-.text-truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 60px;
+  margin-bottom: 10px;
 }

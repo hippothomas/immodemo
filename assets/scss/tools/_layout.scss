@@ -1,0 +1,9 @@
+.wrapper {
+  min-height: calc(100vh - 300px);
+}
+.wrapper_block {
+  width: var(--width);
+  max-width: var(--max-width);
+  margin: 70px auto 0;
+  position: relative;
+}

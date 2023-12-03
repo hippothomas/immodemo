@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+<div class="wrapper" id="contact">
+    <div class="section headings">
+        <div class="wrapper_block">
+            <h1 class="title">Parlez-nous de vos Projets Immobiliers</h1>
+            <h2 class="desc">Votre passerelle vers un avenir immobilier serein</h2>
+        </div>
+    </div>
+
+    <div class="section contact-form">
+        <div class="wrapper_block">
+            <input type="text" name="full-name" placeholder="Votre nom complet" />
+            <input type="text" name="phone" placeholder="Téléphone" />
+            <input type="email" name="email" placeholder="Email" />
+            <textarea name="message" placeholder="Votre message" cols="30" rows="10"></textarea>
+            <label>
+                <div class="checkbox_data">
+                    <input type="checkbox" name="data" id="data" />
+                    <div class="label_data">
+                         J’accepte le traitement de mes <a href="#">données personnelles</a>.
+                    </div>
+                </div>
+            </label>
+            <div class="contact-btn">
+                <input type="submit" value="Envoyer" id="contact-btn" />
+            </div>
+        </div>
+    </div>
+
+    {% include 'partials/newsletter.html.twig' %}
+</div>
+{% endblock %}

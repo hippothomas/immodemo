@@ -1,6 +1,6 @@
 import { tns } from "tiny-slider"
 import L from "leaflet"
-import { demo } from "../func"
+import { demo } from "../functions"
 
 if (document.getElementById('property') !== null) {
     // Property Slider

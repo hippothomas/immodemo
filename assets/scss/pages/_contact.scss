@@ -1,0 +1,49 @@
+#contact {
+  .section.headings {
+    .wrapper_block {
+      margin: 80px auto 45px;
+      text-align: center;
+
+      .title {
+        margin-bottom: 5px;
+      }
+      .desc {
+        font-size: 17px;
+        font-weight: normal;
+        margin: 0;
+      }
+    }
+  }
+
+  .section.contact-form {
+    .wrapper_block {
+      background: var(--light-blue);
+      border-radius: var(--border-radius);
+      padding: 20px;
+      margin: 30px auto 50px;
+
+      input[type="text"], input[type="email"], textarea {
+        width: calc(100% - 27px);
+        margin-bottom: 20px;
+      }
+      .checkbox_data {
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .label_data { margin: 0; }
+      .contact-btn {
+        text-align: right;
+        #contact-btn {
+          font-weight: bold;
+          padding: 12px 25px;
+          letter-spacing: 0.4px;
+          border: none;
+          transition: var(--transition);
+        }
+        #contact-btn:hover {
+          background: var(--hover);
+        }
+      }
+    }
+  }
+}

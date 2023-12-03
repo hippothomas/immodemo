@@ -4,7 +4,7 @@ import './scss/app.scss';
 
 // Imports
 // ==================
-import { demo } from "./js/func";
+import { demo } from "./js/functions";
 
 // Pages
 // ==================
@@ -23,7 +23,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
 
         let attr = this.getAttribute('href');
-        if (attr === '#') return;
+        if (attr === '#') {
+            demo();
+            return;
+        }
 
         let selector = document.querySelector(attr);
         if (selector != null) {

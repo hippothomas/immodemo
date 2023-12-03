@@ -1,0 +1,47 @@
+select {
+  width: 140px;
+  color: #858585;
+  border: 1px solid #DDD;
+  background: var(--white);
+  border-radius: var(--border-radius);
+  margin-right: 7px;
+  padding: 10px 13px;
+  font-size: 14px;
+}
+input[type="text"], input[type="email"], textarea {
+  width: 205px;
+  border: 1px solid #DDD;
+  background: var(--white);
+  padding: 13px;
+  border-radius: var(--border-radius);
+  font-family: $font;
+  font-size: 14px;
+  box-shadow: inset 0 1px 5px 0 rgba(0,0,0,0.1);
+}
+textarea { resize: none; }
+select:focus, input[type="text"]:active {
+  color: var(--blue);
+  border: 1px solid var(--blue);
+}
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0 8px 0 0;
+  accent-color: var(--blue);
+}
+input[type="submit"] {
+  background: var(--blue);
+  color: var(--white);
+  border: 1px solid var(--blue);
+  border-radius: var(--border-radius);
+  padding: 11px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.checkbox_data { display: flex; }
+.label_data {
+  margin-top: -1px;
+  margin-bottom: 20px;
+  width: calc(100% - 26px);
+  a { color: var(--blue); }
+}

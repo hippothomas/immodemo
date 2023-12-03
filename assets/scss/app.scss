@@ -9,7 +9,10 @@
   --hover: #6E8AE9;
   --color: var(--dark-blue);
   --background: var(--white);
-  --header-height: 48px;
+  --width: 80vw;
+  --max-width: 930px;
+  --border-radius: 3px;
+  --transition: 0.25s cubic-bezier(.39,.58,.57,1);
 }
 
 // Libs
@@ -19,7 +22,9 @@
 
 // Outils
 // ==================
+@import 'tools/layout';
 @import 'tools/typography';
+@import 'tools/form';
 @import 'tools/animations';
 
 // Generic
@@ -36,9 +41,6 @@ body {
   background: var(--color);
   color: #fff;
 }
-.wrapper {
-  min-height: calc(100vh - 300px);
-}
 
 // Modules
 // ==================
@@ -52,3 +54,4 @@ body {
 @import 'pages/home';
 @import 'pages/search';
 @import 'pages/property';
+@import 'pages/contact';
