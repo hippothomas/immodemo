@@ -1,5 +1,6 @@
 import { tns } from "tiny-slider"
 import L from "leaflet"
+import { demo } from "../func"
 
 if (document.getElementById('property') !== null) {
     // Property Slider
@@ -36,4 +37,7 @@ if (document.getElementById('property') !== null) {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>'
     }).addTo(map);
     L.marker([51.5, -0.09]).addTo(map);
+    // Click on contact button
+    // ==================
+    document.getElementById('contact-btn').addEventListener('click', demo);
 }
