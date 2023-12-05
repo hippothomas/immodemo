@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Premium penthouse in central Barcelona with panoramic views{% endblock %}
+{% block title %}{{ property.title }}{% endblock %}
 
 {% block body %}
 <div class="wrapper" id="property">
     <div class="wrapper_block title_section">
-        <h1 class="title">Premium penthouse in central Barcelona with panoramic views</h1>
+        <h1 class="title">{{ property.title }}</h1>
     </div>
 
     <div class="section property">
@@ -13,41 +13,21 @@
             <div class="property-details">
                 <div class="slider_block">
                     <div class="slider" id="property-slider">
-                        <div class="slide" data-id="I001">
-                            <img src="https://picsum.photos/id/48/735/365" alt="Photo desc 1" />
+                        {% for photo in property.photos %}
+                        <div class="slide" data-id="I{{ loop.index }}">
+                            <img src="{{ photo }}" alt="Photo {{ loop.index }}" />
                         </div>
-                        <div class="slide" data-id="I002">
-                            <img src="https://picsum.photos/id/49/735/365" alt="Photo desc 2" />
-                        </div>
-                        <div class="slide" data-id="I003">
-                            <img src="https://picsum.photos/id/50/735/365" alt="Photo desc 3" />
-                        </div>
-                        <div class="slide" data-id="I004">
-                            <img src="https://picsum.photos/id/51/735/365" alt="Photo desc 4" />
-                        </div>
-                        <div class="slide" data-id="I005">
-                            <img src="https://picsum.photos/id/52/735/365" alt="Photo desc 5" />
-                        </div>
+                        {% endfor %}
                     </div>
                     <div class="slider_controls">
                         <div class="arrow-left"></div>
                         <div class="thumbnails_wrapper">
                             <div class="thumbnails_control">
-                                <div class="slide" data-id="I001">
-                                    <img src="https://picsum.photos/id/48/191/84" alt="Photo desc 1" />
+                                {% for photo in property.photos %}
+                                <div class="slide" data-id="I{{ loop.index }}">
+                                    <img src="{{ photo }}" alt="Photo {{ loop.index }}" />
                                 </div>
-                                <div class="slide" data-id="I002">
-                                    <img src="https://picsum.photos/id/49/191/84" alt="Photo desc 2" />
-                                </div>
-                                <div class="slide" data-id="I003">
-                                    <img src="https://picsum.photos/id/50/191/84" alt="Photo desc 3" />
-                                </div>
-                                <div class="slide" data-id="I004">
-                                    <img src="https://picsum.photos/id/51/191/84" alt="Photo desc 4" />
-                                </div>
-                                <div class="slide" data-id="I005">
-                                    <img src="https://picsum.photos/id/52/191/84" alt="Photo desc 5" />
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="arrow-right"></div>
@@ -57,20 +37,20 @@
                 <div class="details_block">
                     <div class="icon_group">
                         <div class="type">
-                            Appartement
+                            {{ property.type.name }}
                         </div>
                         <div class="dimensions">
-                            224m2
+                            {{ property.totalArea|round(0, 'ceil') }}m2
                         </div>
                         <div class="location">
-                            Saint-Sébastien sur Loire
+                            {{ property.city }}
                         </div>
                     </div>
 
                     <div class="price_group">
                         <div class="text_section">
                             <div class="desc">Prix</div>
-                            <div class="title">380 000€</div>
+                            <div class="title">{{ property.price|number_format(0, ',', ' ') }}€</div>
                         </div>
                         <div class="button_section">
                             <a href="#">Simuler mon prêt</a>
@@ -78,11 +58,7 @@
                     </div>
 
                     <div class="description_group">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus eros et massa malesuada, in pretium ex mattis. Nunc auctor finibus urna, vel fermentum ligula dictum ut. Phasellus sed ex ac tellus tincidunt commodo. Pellentesque at blandit lorem, viverra accumsan ante. Donec eget iaculis purus, et vulputate est. Donec sit amet ullamcorper nisi. Morbi sed nisi condimentum, ullamcorper urna mattis, viverra neque. Vivamus egestas ligula vel pulvinar condimentum. Proin nibh lorem, malesuada tincidunt aliquet at, pellentesque eget neque. Vivamus aliquam leo enim, ac vehicula nibh lacinia sit amet. Praesent a ultrices lectus. Etiam finibus massa at lorem lacinia varius.</p>
-                        <p>Nullam eu lacus rhoncus, semper tellus vitae, viverra velit. Ut sed interdum ex. Sed ut velit magna. Suspendisse eu sagittis massa. Donec sodales gravida felis ornare porta. Sed blandit, leo sit amet molestie volutpat, neque diam dapibus libero, suscipit tincidunt eros lacus et dui. Morbi feugiat orci justo, quis tincidunt dolor euismod eget. Sed efficitur mauris ut odio pellentesque, at mollis tellus pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur mollis aliquet tellus, a rutrum ipsum ullamcorper pulvinar. In augue turpis, aliquet sit amet lacinia maximus, viverra vitae dui. Vivamus rutrum, tellus ut bibendum dapibus, magna nibh aliquet tortor, non ultrices felis ipsum sit amet ipsum. Quisque sit amet mauris vitae urna varius bibendum et sit amet mauris.</p>
-                        <p>Mauris congue ligula vitae purus elementum semper. Nam molestie sem eget purus pharetra ultrices. Sed gravida nunc nulla, eu egestas lacus tempus in. Duis felis mauris, egestas cursus mi vitae, vulputate rhoncus enim. Vestibulum sagittis, tellus non consequat tempus, sapien nibh mollis turpis, ac tincidunt ex sapien vitae turpis. Integer venenatis mollis vulputate. Donec non lobortis libero.</p>
-                        <p>Vivamus a egestas dolor. Praesent porta diam mauris, a molestie libero volutpat eget. In maximus eros at est interdum tincidunt. Vivamus eget metus velit. Sed fringilla ultricies eros molestie viverra. Aenean id gravida massa, vel luctus eros. Pellentesque mollis posuere ullamcorper. Aliquam pellentesque dui ex, vitae ornare ante condimentum eget. Donec velit turpis, interdum at tincidunt quis, maximus ut nisl. Sed sit amet sodales eros. Nam faucibus eros quis dolor facilisis, sit amet tempor leo imperdiet. Vestibulum sed enim sapien.</p>
-                        <p>Praesent maximus augue in elementum ullamcorper. Etiam gravida, odio vitae cursus placerat, lorem nibh eleifend augue, sed cursus sem ipsum at quam. Vivamus ultrices ligula ut neque mollis, nec viverra odio rhoncus. Curabitur eleifend accumsan dui eu ornare. Mauris vitae turpis at odio tincidunt maximus. Sed facilisis lectus lectus, eu egestas sapien consectetur eu. Nunc sodales leo metus, id tincidunt quam laoreet in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec quam dui, porttitor quis dolor a, aliquam venenatis lacus. Praesent rutrum erat vitae nibh tincidunt, et ultrices orci consectetur. Vestibulum interdum elementum neque nec finibus. Praesent a massa maximus, facilisis sem ac, tincidunt lacus. Aenean viverra bibendum tortor id elementum. </p>
+                        {{ property.description }}
                     </div>
 
                     <div class="map_group">
@@ -125,24 +101,22 @@
 
                 <div class="broker-card">
                     <div class="photo">
-                        <img src="/images/pages/home/team/alexandra.jpg" alt="Alexandra Visite" />
+                        <img src="{{ property.agent.photo }}" alt="{{ property.agent.firstname }} {{ property.agent.lastname }}" />
                     </div>
-                    <div class="name title">Alexandra Visite</div>
-                    <div class="phone">+336 12 34 56 78</div>
-                    <div class="mail">alexandra.visite@immodemo.fr</div>
+                    <div class="name title">{{ property.agent.firstname }} {{ property.agent.lastname }}</div>
+                    <div class="phone">{{ property.agent.phone }}</div>
+                    <div class="mail">{{ property.agent.email }}</div>
                 </div>
 
                 <div class="carac-card">
                     <div class="title">Caractéristiques</div>
-                    <div class="carac"><span>Ville:</span> Barcelona I.</div>
-                    <div class="carac"><span>Garages:</span> 2 places</div>
-                    <div class="carac"><span>Type:</span> Appartement</div>
-                    <div class="carac"><span>Nombre de pièces:</span> 5</div>
-                    <div class="carac"><span>Surface habitable:</span> 224 m2</div>
-                    <div class="carac"><span>Surface totale:</span> 307 m2</div>
-                    <div class="carac"><span>Balcon:</span> Oui</div>
-                    <div class="carac"><span>Terrasse:</span> Oui</div>
-                    <div class="carac"><span>Nombre de s.d.b.:</span> 1</div>
+                    <div class="carac"><span>Référence:</span> {{ property.reference }}</div>
+                    <div class="carac"><span>Type:</span> {{ property.type.name }}</div>
+                    <div class="carac"><span>Surface habitable:</span> {{ property.livingArea|round(0, 'ceil') }} m2</div>
+                    <div class="carac"><span>Surface totale:</span> {{ property.totalArea|round(0, 'ceil') }} m2</div>
+                    <div class="carac"><span>Nombre de pièces:</span> {{ property.room }}</div>
+                    <div class="carac"><span>Nombre de chambres:</span> {{ property.bedroom }}</div>
+                    <div class="carac"><span>Ville:</span> {{ property.city }}</div>
                 </div>
             </div>
         </div>
