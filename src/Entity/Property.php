@@ -43,7 +43,7 @@ class Property
     private ?User $agent = null;
 
     #[ORM\Column(nullable: true)]
-    private ?int $rooms = null;
+    private ?int $room = null;
 
     #[ORM\Column(nullable: true)]
     private ?int $bedroom = null;
@@ -182,14 +182,14 @@ class Property
         return $this;
     }
 
-    public function getRooms(): ?int
+    public function getRoom(): ?int
     {
-        return $this->rooms;
+        return $this->room;
     }
 
-    public function setRooms(?int $rooms): static
+    public function setRoom(?int $room): static
     {
-        $this->rooms = $rooms;
+        $this->room = $room;
 
         return $this;
     }
