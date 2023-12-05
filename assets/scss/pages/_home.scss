@@ -289,6 +289,13 @@
               position: relative;
               font-size: 13.5px;
               padding: 10px 0 20px 40px;
+              display: -webkit-box;
+              max-width: calc(100% - 30px);
+              height: 115px;
+              max-height: 115px;
+              -webkit-line-clamp: 6;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
             }
             .quote:after {
               content: "";

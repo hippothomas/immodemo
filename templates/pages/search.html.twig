@@ -39,22 +39,22 @@
     <div class="section listing">
         <div class="wrapper_block">
             <div class="results">
-                {% for i in 1..12 %}
-                <div class="property-card" data-id="P0{{ i }}">
+                {% for property in properties %}
+                <div class="property-card" data-id="{{ property.reference }}">
                     <div class="container">
                         <div class="photo">
-                            <a href="{{ path('property', {'slug': 'property-slug-ref12345'}) }}">
-                                <img src="https://picsum.photos/id/48/300/300" alt="Grand 4 pièces avec une belle terrasse" />
+                            <a href="{{ path('property', {'slug': property.slug}) }}">
+                                <img src="{{ property.photos.0 }}" alt="{{ property.title }}" />
                             </a>
                         </div>
                         <div class="desc">
                             <div class="title">
-                                <a href="{{ path('property', {'slug': 'property-slug-ref12345'}) }}">
-                                    Grand 4 pièces avec une belle terrasse
+                                <a href="{{ path('property', {'slug': property.slug}) }}">
+                                    {{ property.title }}
                                 </a>
                             </div>
-                            <div class="price">320 000€</div>
-                            <div class="city">Nantes</div>
+                            <div class="price">{{ property.price|number_format(0, ',', ' ') }}€</div>
+                            <div class="city">{{ property.city }}</div>
                         </div>
                     </div>
                 </div>

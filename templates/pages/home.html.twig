@@ -52,22 +52,22 @@
                 </div>
             </div>
             <div class="wrapper_offers" id="topoffers_slider">
-                {% for i in 1..4 %}
-                <div class="property-card" data-id="P00{{i}}">
+                {% for property in featured %}
+                <div class="property-card" data-id="{{ property.reference }}">
                     <div class="container">
                         <div class="photo">
-                            <a href="{{ path('property', {'slug': 'property-slug-ref12345'}) }}">
-                                <img src="https://picsum.photos/id/48/300/300" alt="titre" />
+                            <a href="{{ path('property', {'slug': property.slug}) }}">
+                                <img src="{{ property.photos.0 }}" alt="{{ property.title }}" />
                             </a>
                         </div>
                         <div class="desc">
                             <div class="title">
-                                <a href="{{ path('property', {'slug': 'property-slug-ref12345'}) }}">
-                                    Grand 4 pièces avec une belle terrasse
+                                <a href="{{ path('property', {'slug': property.slug}) }}">
+                                    {{ property.title }}
                                 </a>
                             </div>
-                            <div class="price">320 000€</div>
-                            <div class="city">Nantes</div>
+                            <div class="price">{{ property.price|number_format(0, ',', ' ') }}€</div>
+                            <div class="city">{{ property.city }}</div>
                         </div>
                     </div>
                 </div>
@@ -144,18 +144,18 @@
                 <div class="desc">Plongez dans l'expérience de nos clients satisfaits. Leurs témoignages reflètent notre engagement à dépasser vos attentes et à créer des histoires immobilières exceptionnelles.</div>
             </div>
             <div class="references_slider" id="references_slider">
-                {% for i in 1..5 %}
+                {% for testimonial in testimonials %}
                 <div class="card">
                     <div class="container">
-                        <div class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique in pellentesque ultrices et massa neque, convallis lorem. Erat proin in posuere dui accumsan lorem. Diam nunc scelerisque mi vestibulum scelerisque mi ac nisi. Dictumst nunc placerat ultricies pretium.</div>
-                        <div class="name">Emerson Aminoff</div>
-                        <div class="home_title">3 bedroom apartment in Madrid</div>
+                        <div class="quote">{{ testimonial.content }}</div>
+                        <div class="name">{{ testimonial.fullname }}</div>
+                        <div class="home_title">{{ testimonial.propertyName }}</div>
                     </div>
                 </div>
                 {% endfor %}
             </div>
             <div class="references_slider_dots">
-                {% for i in 1..3 %}
+                {% for i in 1..(testimonials|length / 2)|round(0, 'ceil') %}
                     <div class="dot"></div>
                 {% endfor %}
             </div>
