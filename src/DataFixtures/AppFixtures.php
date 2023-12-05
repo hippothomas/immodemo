@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Property;
 use App\Entity\PropertyType;
+use App\Entity\Testimonial;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -83,6 +84,15 @@ class AppFixtures extends Fixture
             $property->setDpe($faker->numberBetween(10, 200));
             $property->setGes($faker->numberBetween(10, 80));
             $manager->persist($property);
+        }
+
+        // Generating Testimonials
+        for ($i=0; $i < 6; $i++) {
+            $testimonial = new Testimonial();
+            $testimonial->setFullname($faker->name());
+            $testimonial->setPropertyName($faker->sentence(4));
+            $testimonial->setContent($faker->paragraph());
+            $manager->persist($testimonial);
         }
 
         $manager->flush();
