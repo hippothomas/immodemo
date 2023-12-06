@@ -4,12 +4,19 @@ import './scss/app.scss';
 
 // Imports
 // ==================
+import Vue from 'vue';
+import Map from './js/components/Map';
 import { demo } from "./js/functions";
 
 // Pages
 // ==================
 import './js/pages/home';
 import './js/pages/property';
+
+new Vue({
+  el: '#app',
+  components: { 'map-component': Map }
+});
 
 // Click on newsletter button
 // ==================
@@ -24,7 +31,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
         let attr = this.getAttribute('href');
         if (attr === '#') {
-            demo();
+            // FIXME: issue with leaflet
+            // demo();
             return;
         }
 

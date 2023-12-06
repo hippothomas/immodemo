@@ -62,7 +62,10 @@
                     </div>
 
                     <div class="map_group">
-                        <div id="map"></div>
+                        <map-component
+                                :coordinate-x="{{ property.coordinateX }}"
+                                :coordinate-y="{{ property.coordinateY }}"
+                        ></map-component>
                     </div>
                 </div>
             </div>
