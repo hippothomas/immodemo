@@ -53,24 +53,14 @@
             </div>
             <div class="wrapper_offers" id="topoffers_slider">
                 {% for property in featured %}
-                <div class="property-card" data-id="{{ property.reference }}">
-                    <div class="container">
-                        <div class="photo">
-                            <a href="{{ path('property', {'slug': property.slug}) }}">
-                                <img src="{{ property.photos.0 }}" alt="{{ property.title }}" />
-                            </a>
-                        </div>
-                        <div class="desc">
-                            <div class="title">
-                                <a href="{{ path('property', {'slug': property.slug}) }}">
-                                    {{ property.title }}
-                                </a>
-                            </div>
-                            <div class="price">{{ property.price|number_format(0, ',', ' ') }}€</div>
-                            <div class="city">{{ property.city }}</div>
-                        </div>
-                    </div>
-                </div>
+                <card-property
+                        :reference="'{{ property.reference }}'"
+                        :path="'{{ path('property', {'slug': property.slug}) }}'"
+                        :photo="'{{ property.photos.0 }}'"
+                        :title="'{{ property.title }}'"
+                        :price="'{{ property.price|number_format(0, ',', ' ') }}'"
+                        :city="'{{ property.city }}'"
+                ></card-property>
                 {% endfor %}
             </div>
         </div>

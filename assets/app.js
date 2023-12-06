@@ -5,17 +5,28 @@ import './scss/app.scss';
 // Imports
 // ==================
 import Vue from 'vue';
+import { loadScripts, demo } from "./js/functions";
+
+// Components
+// ==================
 import Map from './js/components/Map';
-import { demo } from "./js/functions";
+import CardProperty from "./js/components/CardProperty";
 
 // Pages
 // ==================
-import './js/pages/home';
-import './js/pages/property';
+import { home } from './js/pages/home';
+import { property } from './js/pages/property';
 
 new Vue({
   el: '#app',
-  components: { 'map-component': Map }
+  components: {
+      'map-component': Map,
+      CardProperty
+  },
+  mounted() {
+      loadScripts('homepage', home);
+      loadScripts('property', property);
+  }
 });
 
 // Click on newsletter button

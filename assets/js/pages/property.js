@@ -1,7 +1,7 @@
 import { tns } from "tiny-slider"
 import { demo } from "../functions"
 
-if (document.getElementById('property') !== null) {
+export function property() {
     // Property Slider
     // ==================
     tns({

@@ -1,6 +1,6 @@
 import { tns } from "tiny-slider"
 
-if (document.getElementById('homepage') !== null) {
+export function home() {
     // Slider on homepage
     // ==================
     let sliderbarDiv = document.getElementById('sliderbar-topoffer');
