@@ -62,7 +62,7 @@
                         :photo="'{{ property.photos.0 }}'"
                         :title="'{{ property.title }}'"
                         :price="'{{ property.price|number_format(0, ',', ' ') }}'"
-                        :city="'{{ property.city }}'"
+                        :city="'{{ property.location.city }}'"
                 ></card-property>
                 {% endfor %}
             </div>

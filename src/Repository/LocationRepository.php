@@ -21,28 +21,37 @@ class LocationRepository extends ServiceEntityRepository
         parent::__construct($registry, Location::class);
     }
 
-//    /**
-//     * @return Location[] Returns an array of Location objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('l')
-//            ->andWhere('l.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('l.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    /**
+     * Finds locations by name.
+     *
+     * @param string $name The name to search for. The search is case-insensitive.
+     * @return Location[] The array of locations matching the name.
+     */
+    public function findByName(string $name): array
+    {
+        return $this->createQueryBuilder('l')
+            ->andWhere('LOWER(l.city) LIKE LOWER(:name)')
+            ->setParameter('name', "%{$name}%")
+            ->orderBy('l.city', 'ASC')
+            ->setMaxResults(25)
+            ->getQuery()
+            ->getResult();
+    }
 
-//    public function findOneBySomeField($value): ?Location
-//    {
-//        return $this->createQueryBuilder('l')
-//            ->andWhere('l.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    /**
+     * Finds locations by postal code.
+     *
+     * @param string $postalCode The postal code to search for.
+     * @return Location[] An array of locations matching the postal code.
+     */
+    public function findByPostalCode(string $postalCode): array
+    {
+        return $this->createQueryBuilder('l')
+            ->andWhere('l.postalCode LIKE :postal_code')
+            ->setParameter('postal_code', "%{$postalCode}%")
+            ->orderBy('l.postalCode', 'ASC')
+            ->setMaxResults(25)
+            ->getQuery()
+            ->getResult();
+    }
 }

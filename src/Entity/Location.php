@@ -75,7 +75,7 @@ class Location
     {
         if (empty($this->identifier)) {
             $slugify = new Slugify();
-            $this->identifier = $slugify->slugify($this->postalCode.'_'.$this->city);
+            $this->identifier = $this->postalCode.'_'.$slugify->slugify($this->city);
         }
     }
 
