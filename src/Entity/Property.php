@@ -58,12 +58,6 @@ class Property
     #[ORM\Column(nullable: true)]
     private ?float $totalArea = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $city = null;
-
-    #[ORM\Column(length: 20, nullable: true)]
-    private ?string $postalCode = null;
-
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
@@ -84,6 +78,10 @@ class Property
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?DateTimeInterface $updated = null;
+
+    #[ORM\ManyToOne(inversedBy: 'properties')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Location $location = null;
 
     public function getId(): ?int
     {
@@ -256,30 +254,6 @@ class Property
         return $this;
     }
 
-    public function getCity(): ?string
-    {
-        return $this->city;
-    }
-
-    public function setCity(?string $city): static
-    {
-        $this->city = $city;
-
-        return $this;
-    }
-
-    public function getPostalCode(): ?string
-    {
-        return $this->postalCode;
-    }
-
-    public function setPostalCode(?string $postalCode): static
-    {
-        $this->postalCode = $postalCode;
-
-        return $this;
-    }
-
     public function getDescription(): ?string
     {
         return $this->description;
@@ -375,5 +349,17 @@ class Property
         if ($this->getCreated() === null) {
             $this->setCreated($dateTimeNow);
         }
+    }
+
+    public function getLocation(): ?Location
+    {
+        return $this->location;
+    }
+
+    public function setLocation(?Location $location): static
+    {
+        $this->location = $location;
+
+        return $this;
     }
 }
