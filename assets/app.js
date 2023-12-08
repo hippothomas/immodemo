@@ -11,6 +11,7 @@ import { loadScripts, demo } from "./js/functions";
 // ==================
 import Map from './js/components/Map';
 import CardProperty from "./js/components/CardProperty";
+import Location from "./js/components/Location";
 
 // Pages
 // ==================
@@ -21,7 +22,8 @@ new Vue({
   el: '#app',
   components: {
       'map-component': Map,
-      CardProperty
+      CardProperty,
+      Location
   },
   mounted() {
       loadScripts('homepage', home);

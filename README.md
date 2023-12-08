@@ -3,7 +3,7 @@
 FICTIVE site of a real estate agency from Nantes
 
 ## Stack
-- **Framework**: [Symfony](https://symfony.com/)
+- **Frameworks**: [Symfony](https://symfony.com/), [Vue.js](https://vuejs.org/)
 - **Database**: [PostgreSQL](https://www.postgresql.org/)
 
 ## Running Locally
