@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Location;
 use App\Entity\Property;
 use App\Entity\PropertyType;
 use App\Entity\Testimonial;
@@ -57,6 +58,16 @@ class AppFixtures extends Fixture
             $types[] = $type;
         }
 
+		// Generating Locations
+        $locations = [];
+        for ($i=0; $i < 15; $i++) {
+            $location = new Location();
+            $location->setCity($faker->city());
+            $location->setPostalCode($faker->postcode());
+            $manager->persist($location);
+            $locations[] = $location;
+        }
+
 		// Generating Properties
         for ($i=0; $i < 30; $i++) {
             $property = new Property();
@@ -76,8 +87,7 @@ class AppFixtures extends Fixture
             $property->setBedroom($faker->numberBetween(1, 10));
             $property->setLivingArea($faker->randomFloat(2, 10, 10000));
             $property->setTotalArea($faker->randomFloat(2, 10, 10000));
-            $property->setCity($faker->city());
-            $property->setPostalCode($faker->postcode());
+            $property->setLocation($locations[$faker->numberBetween(0, 14)]);
             $property->setDescription($faker->paragraphs(4, true));
             $property->setCoordinateX($faker->longitude());
             $property->setCoordinateY($faker->latitude());
