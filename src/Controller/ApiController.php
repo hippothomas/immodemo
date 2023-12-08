@@ -38,13 +38,14 @@ class ApiController extends AbstractController
      */
     private function formatLocationResults(array $locations): array
     {
-        $results = [];
+        $results = ["items" => []];
         foreach ($locations as $location) {
-            $results[] = [
+            $results["items"][] = [
                 'value' => $location->getIdentifier(),
-                'label' => $location->getCity().' ('.$location->getPostalCode().')'
+                'label' => $location->getCity().' ('.$location->getPostalCode().')',
             ];
         }
+        $results["total_count"] = count($results["items"]);
         return $results;
     }
 }
