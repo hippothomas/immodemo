@@ -29,7 +29,8 @@
                         <option value="{{ type.slug }}">{{ type.name }}</option>
                     {% endfor %}
                 </select>
-                <Location></Location>
+                {% set location = app.request.get('lieu') %}
+                <Location :content="'{{ location }}'" @update:content="$event = '{{ location }}'"></Location>
                 <span class="price">
                     <input type="text" name="max_price" id="max_price" placeholder="Prix maximum" />
                 </span>

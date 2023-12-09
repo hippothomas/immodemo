@@ -50,11 +50,12 @@
         display: flex;
         justify-content: space-between;
         gap: 10px;
+        max-height: 40px;
         select {
-          width: 100%;
+          width: 33%;
           padding: 8px 13px;
         }
-        input[type="text"] {
+        .price input[type="text"] {
           width: 250px;
           padding: 10px 13px 10px 32px;
           font-size: 13px;
@@ -64,15 +65,11 @@
           display: inline-block;
           position: relative;
         }
-        span.location:after {
-          content: "";
-          width: 13px;
-          height: 20px;
-          background: url(/assets/images/icon/location.png) 0 0 no-repeat;
-          top: 10px;
-          left: 10px;
-          position: absolute;
-          background-size: contain;
+        span.location {
+          width: 33%;
+          .ts-wrapper {
+            width: 100%;
+          }
         }
         span.price:after {
           content: "";
