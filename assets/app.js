@@ -17,6 +17,7 @@ import Location from "./js/components/Location";
 // ==================
 import { home } from './js/pages/home';
 import { property } from './js/pages/property';
+import { search } from  './js/pages/search';
 
 new Vue({
   el: '#app',
@@ -28,6 +29,7 @@ new Vue({
   mounted() {
       loadScripts('homepage', home);
       loadScripts('property', property);
+      loadScripts('searchpage', search);
   }
 });
 
