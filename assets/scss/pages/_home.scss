@@ -272,6 +272,7 @@
             border-radius: var(--border-radius);
             padding: 20px;
             cursor: pointer;
+            user-select: none;
 
             .quote {
               position: relative;
