@@ -13,49 +13,65 @@
 
     <div class="section search">
         <div class="wrapper_block">
-            <div class="searchbar">
-                <input type="text" name="keyword" id="input_keyword" placeholder="Entrez un mot-clé" />
-                <span class="search-animation">
-                    <input type="submit" value="Rechercher" />
-                </span>
-            </div>
-            <div class="separation">
-                <div class="text">Plus de critères</div>
-            </div>
-            <div class="filters">
-                <select name="type" id="type">
-                    <option value="">Type de bien</option>
-                    {% for type in types %}
-                        <option value="{{ type.slug }}"
-                            {% if type.slug == app.request.get('type') %} selected {% endif %}
-                        >{{ type.name }}</option>
-                    {% endfor %}
-                </select>
-                {% set location = app.request.get('lieu') %}
-                <Location :content="'{{ location }}'" @update:content="$event = '{{ location }}'"></Location>
-                <span class="price">
-                    <input type="text" name="max_price" id="max_price" placeholder="Prix maximum" />
-                </span>
-            </div>
+            <form action="{{ path('search') }}" method="GET">
+                <div class="searchbar">
+                    <input type="text" name="keyword" id="input_keyword" placeholder="Entrez un mot-clé"  value="{{ app.request.get('keyword') }}" />
+                    <span class="search-animation">
+                        <input type="submit" value="Rechercher" />
+                    </span>
+                </div>
+                <div class="separation">
+                    <div class="text">Plus de critères</div>
+                </div>
+                <div class="filters">
+                    <select name="type" id="type">
+                        <option value="">Type de bien</option>
+                        {% for type in types %}
+                            <option value="{{ type.slug }}"
+                                {% if type.slug == app.request.get('type') %} selected {% endif %}
+                            >{{ type.name }}</option>
+                        {% endfor %}
+                    </select>
+                    {% set location = app.request.get('lieu') %}
+                    <Location :content="'{{ location }}'" @update:content="$event = '{{ location }}'"></Location>
+                    <span class="price">
+                        <input type="text" name="max_price" id="max_price" placeholder="Prix maximum" value="{{ app.request.get('max_price') }}" />
+                    </span>
+                </div>
+            </form>
         </div>
     </div>
 
     <div class="section listing">
         <div class="wrapper_block">
             <div class="results">
-                {% for property in properties %}
-                <card-property
-                        :reference="'{{ property.reference }}'"
-                        :path="'{{ path('property', {'slug': property.slug}) }}'"
-                        :photo="'{{ property.photos.0 }}'"
-                        :title="'{{ property.title }}'"
-                        :price="'{{ property.price|number_format(0, ',', ' ') }}'"
-                        :city="'{{ property.location.city }}'"
-                ></card-property>
-                {% endfor %}
+                {% if properties is empty %}
+                    <div>Désolé, nous n'avons pas trouvé de bien pour cette recherche...</div>
+                {% else %}
+                    {% for property in properties %}
+                    <card-property
+                            :reference="'{{ property.reference }}'"
+                            :path="'{{ path('property', {'slug': property.slug}) }}'"
+                            :photo="'{{ property.photos.0 }}'"
+                            :title="'{{ property.title }}'"
+                            :price="'{{ property.price|number_format(0, ',', ' ') }}'"
+                            :city="'{{ property.location.city }}'"
+                    ></card-property>
+                    {% endfor %}
+                {% endif %}
             </div>
-            <div class="load_more">
-                <button id="load-more">Page suivante</button>
+            <div class="page_navigation">
+                {% if prev_page is not empty %}
+                    <a href="{{ prev_page }}">
+                        <svg viewBox="0 0 24 24" height="1em" class="icon" data-v-d64dee9e="" data-v-61503a76=""><path fill="currentColor" d="M15.41 16.58L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.42z" data-v-d64dee9e=""></path></svg>
+                    </a>
+                {% endif %}
+                <div class="current_page">{{ current_page }}</div>
+                {% if next_page is not empty %}
+                    <a href="{{ next_page }}">
+                        <svg viewBox="0 0 24 24" height="1em" class="icon" data-v-d64dee9e="" data-v-61503a76=""><path fill="currentColor" d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z" data-v-d64dee9e=""></path></svg>
+                    </a>
+                {% endif %}
             </div>
         </div>
     </div>

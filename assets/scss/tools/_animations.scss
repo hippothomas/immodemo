@@ -13,6 +13,7 @@ span.search-animation:after {
   left: 18px;
   position: absolute;
   background-size: contain;
+  cursor: pointer;
 }
 span.search-animation:hover:after {
   animation: search 0.35s cubic-bezier(.39,.58,.57,1);

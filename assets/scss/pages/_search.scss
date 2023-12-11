@@ -96,14 +96,16 @@
         row-gap: 35px;
         margin-top: 20px;
       }
-      .load_more {
-        text-align: center;
+      .page_navigation {
         margin-top: 35px;
-        button {
+        display: flex;
+        justify-content: center;
+        .current_page, a {
           background: none;
           color: var(--blue);
-          padding: 9px 22px;
-          font-size: 13px;
+          padding: 9px 15px;
+          font-size: 20px;
+          line-height: 15px;
           font-weight: bold;
           text-decoration: none;
           border: 2px solid var(--blue);
@@ -111,7 +113,13 @@
           cursor: pointer;
           transition: var(--transition);
         }
-        button:hover {
+        .current_page {
+          margin: 0 10px;
+          font-size: 15px;
+          line-height: 20px;
+          cursor: inherit;
+        }
+        a:hover {
           color: var(--white);
           background: var(--blue);
         }
