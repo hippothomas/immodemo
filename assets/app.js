@@ -52,6 +52,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             return;
         }
 
+        // Handle mobile menu
+        let mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenu.checked) {
+            mobileMenu.checked = false;
+        }
+
         let selector = document.querySelector(attr);
         if (selector != null) {
             selector.scrollIntoView({

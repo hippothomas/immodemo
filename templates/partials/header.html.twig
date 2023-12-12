@@ -15,5 +15,26 @@
         <div class="header_contact">
             <a href="{{ path('contact') }}">Contactez-nous</a>
         </div>
+
+        <div class="navbar mobile">
+            <div class="container nav-container">
+                <input class="checkbox" type="checkbox" name="" id="mobile-menu" />
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+                <div class="menu-items">
+                    <ul>
+                        <li><a href="{{ path('home') }}">Accueil</a></li>
+                        <li><a href="{{ path('search') }}">Recherche</a></li>
+                        <li><a href="{{anchor_base}}#a-propos">À Propos</a></li>
+                        <li><a href="{{anchor_base}}#notre-equipe">Notre équipe</a></li>
+                        <li><a href="{{ path('contact') }}">Contactez-nous</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </div>
 </nav>

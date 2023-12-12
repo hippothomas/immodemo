@@ -43,6 +43,10 @@ body {
   color: #fff;
 }
 
+// Breakpoints for media queries
+// ==================
+$breakpoint-wrapper: 900px;
+
 // Modules
 // ==================
 @import 'modules/header';
