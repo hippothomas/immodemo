@@ -18,11 +18,19 @@ export function home() {
     // Slider instantiation
     let slider = tns({
         container: '.wrapper_offers',
-        items: 3,
+        items: 1,
         gutter: 20,
         prevButton: '.arrow-left',
         nextButton: '.arrow-right',
         nav: false,
+        responsive: {
+            550: {
+                items: 2
+            },
+            750: {
+                items: 3
+            }
+        },
         onInit: () => {
             sliderBarWidth(1, SLIDER_CHILD_COUNT);
         }
