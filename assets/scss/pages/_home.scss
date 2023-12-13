@@ -225,6 +225,9 @@
       .card, .text_section {
         width: 30%;
       }
+      .text_section.mobile {
+        display: none;
+      }
       .card {
         background: var(--white);
         border: 1px solid var(--light-blue);
@@ -433,8 +436,12 @@
       .card, .text_section {
         width: 100%;
       }
-      .text_section {
+      .text_section.mobile {
+        display: block;
         margin: 40px 0;
+      }
+      .text_section.desktop {
+        display: none;
       }
     }
   }
