@@ -58,3 +58,30 @@
     }
   }
 }
+
+@media (max-width: $breakpoint-wrapper) {
+  .section.newsletter .wrapper_block {
+    justify-content: center;
+
+    .picto_section {
+      display: none;
+    }
+    .text_section {
+      margin: 50px 0;
+    }
+  }
+}
+@media (max-width: 420px) {
+  .section.newsletter .wrapper_block .text_section  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    input[type="email"] {
+      width: calc(100% - 28px);
+    }
+    input[type="submit"] {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}

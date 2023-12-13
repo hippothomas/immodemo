@@ -17,27 +17,31 @@ footer {
     }
   }
 
-  .footer_real a {
-    color: var(--white);
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-    position: relative;
-  }
-  .footer_real a:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 1.5px;
-    bottom: 2px;
-    left: 0;
-    background-color: var(--white);
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-  .footer_real a:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+  .footer_real {
+    width: var(--width);
+    margin: 10px auto;
+    a {
+      color: var(--white);
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 1.5px;
+        bottom: 2px;
+        left: 0;
+        background-color: var(--white);
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+      &:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    }
   }
 }
