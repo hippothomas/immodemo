@@ -127,3 +127,71 @@
     }
   }
 }
+
+@media (max-width: 950px) {
+  #searchpage {
+    .section.search .wrapper_block {
+      .filters {
+        max-height: inherit;
+        flex-direction: column;
+        gap: 15px;
+        select {
+          width: 100%;
+        }
+        .price input[type="text"] {
+          width: calc(100% - 45px);
+        }
+        span.location {
+          width: 100%;
+          .ts-wrapper {
+            width: 100%;
+            #location-ts-control {
+              min-width: 100%;
+            }
+            .plugin-dropdown_input .dropdown-input {
+              width: calc(100% - 16px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 750px) {
+  #searchpage {
+    .section.listing {
+      .property-card {
+        width: calc(50% - 10px);
+      }
+    }
+  }
+}
+@media (max-width: 550px) {
+  #searchpage {
+    .section.search .wrapper_block {
+      .searchbar {
+        flex-direction: column;
+        gap: 15px;
+        input[type="text"] {
+          width: calc(100% - 23px);
+        }
+        input[type="submit"] {
+          width: 100%;
+        }
+      }
+    }
+    .section.listing {
+      .property-card {
+        width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 370px) {
+  #searchpage {
+    .section.headings .wrapper_block .title {
+      font-size: 37px;
+      line-height: 48px;
+    }
+  }
+}
