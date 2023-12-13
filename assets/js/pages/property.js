@@ -15,11 +15,19 @@ export function property() {
     // ==================
     tns({
         container: '.thumbnails_control',
-        items: 3,
+        items: 1,
         gutter: 10,
         prevButton: '.arrow-left',
         nextButton: '.arrow-right',
-        nav: false
+        nav: false,
+        responsive: {
+            500: {
+                items: 2
+            },
+            700: {
+                items: 3
+            },
+        }
     });
     // Click on contact button
     // ==================

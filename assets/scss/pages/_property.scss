@@ -246,7 +246,7 @@
             font-size: inherit;
             line-height: inherit;
           }
-          .phone, .mail { font-size: 14px; }
+          .phone, .mail { font-size: 14px; word-wrap: break-word; }
         }
 
         .carac-card {
@@ -268,6 +268,64 @@
           }
         }
       }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  #property {
+    .section.property .wrapper_block {
+      flex-direction: column;
+      .property-details {
+        width: calc(100% - 15px);
+        min-width: inherit;
+        min-height: inherit;
+      }
+      .contact-details {
+        width: calc(100% - 15px);
+        margin-bottom: 40px;
+        .broker-card, .carac-card {
+          max-width: 300px;
+          margin: 30px auto;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 700px) {
+  #property {
+    .title_section .title {
+      font-size: 40px;
+    }
+    .section.property .wrapper_block .property-details .details_block {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 500px) {
+  #property {
+    .title_section .title {
+      font-size: 32px;
+      line-height: 45px;
+    }
+    .section.property .wrapper_block .property-details .details_block {
+      .icon_group {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .price_group {
+        flex-direction: column;
+        gap: 15px;
+        margin: 40px auto 35px;
+        width: fit-content;
+      }
+    }
+  }
+}
+@media (max-width: 350px) {
+  #property {
+    .section.property .wrapper_block .property-details .slider_block .slider_controls .thumbnails_wrapper {
+      width: calc(100% - 100px);
     }
   }
 }
