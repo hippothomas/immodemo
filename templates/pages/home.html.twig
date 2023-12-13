@@ -145,11 +145,7 @@
                 </div>
                 {% endfor %}
             </div>
-            <div class="references_slider_dots">
-                {% for i in 1..(testimonials|length / 2)|round(0, 'ceil') %}
-                    <div class="dot"></div>
-                {% endfor %}
-            </div>
+            <div class="references_slider_dots" id="references_controls"></div>
         </div>
     </div>
 
