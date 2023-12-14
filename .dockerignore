@@ -1,0 +1,12 @@
+/build/
+/node_modules/
+/var/cache/*
+/var/log/*
+/var/sessions/*
+/public/build
+
+/public/bundles/
+/vendor/
+
+/.idea/
+/.git/
