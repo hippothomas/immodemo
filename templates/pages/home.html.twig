@@ -58,7 +58,7 @@
                         :reference="'{{ property.reference }}'"
                         :path="'{{ path('property', {'slug': property.slug}) }}'"
                         :photo="'{{ property.photos.0 }}'"
-                        :title="'{{ property.title }}'"
+                        :title='{{ property.title|json_encode }}'
                         :price="'{{ property.price|number_format(0, ',', ' ') }}'"
                         :city="'{{ property.location.city }}'"
                 ></card-property>
