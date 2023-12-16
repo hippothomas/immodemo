@@ -1,21 +1,25 @@
 version: '3.7'
 services:
   nginx:
+    platform: linux/arm64/v8
     build:
       args:
         VERSION: 1.25.3
       context: .
       dockerfile: ./Dockerfile
       target: nginx
+    image: immodemo/nginx
     depends_on:
       - php-fpm
     ports:
       - "9001:80"
   php-fpm:
+    platform: linux/arm64/v8
     build:
       args:
         VERSION: 8.3
       context: .
       dockerfile: ./Dockerfile
       target: php-fpm
+    image: immodemo/php-fpm
     command: sh -c 'php-fpm'
