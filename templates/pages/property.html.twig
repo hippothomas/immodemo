@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}{{ property.title }}{% endblock %}
+{% block description %}{{ property.description|striptags|slice(0, 300) }}...{% endblock %}
 
 {% block body %}
 <div class="wrapper" id="property">

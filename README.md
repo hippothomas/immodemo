@@ -3,6 +3,8 @@
 
 FICTIVE site of a real estate agency from Nantes
 
+Demo : [immodemo.hippolyte-thomas.fr](https://immodemo.hippolyte-thomas.fr)
+
 ## Stack
 - **Frameworks**: [Symfony](https://symfony.com/), [Vue.js](https://vuejs.org/)
 - **Database**: [PostgreSQL](https://www.postgresql.org/)
@@ -29,6 +31,12 @@ $ symfony console doctrine:migrations:migrate
 ### Load fixtures to populate the db
 ```shell
 $ symfony console doctrine:fixtures:load
+```
+
+### Run in Kubernetes
+
+```shell
+$ docker compose build
 ```
 
 ## License
