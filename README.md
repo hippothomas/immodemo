@@ -33,7 +33,7 @@ $ symfony console doctrine:migrations:migrate
 $ symfony console doctrine:fixtures:load
 ```
 
-### Run in Kubernetes
+### Build Images
 
 ```shell
 $ docker compose build
